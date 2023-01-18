@@ -1,7 +1,7 @@
 import React from "react";
 import Cell from "./Cell";
 
-const Stage = () => {
+const Stage = ({ stage }) => {
   return (
     <div className="Stage">
       <Cell />
