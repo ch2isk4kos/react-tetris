@@ -18,7 +18,6 @@ const Tetris = () => {
   return (
     <StyledTetrisWrapper>
       <StyledTetris>
-        <h1>Tetris</h1>
         <Stage stage={createStage()} />
         {/* <Stage stage={stage} /> */}
         <aside>
