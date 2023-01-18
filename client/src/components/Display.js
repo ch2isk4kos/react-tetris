@@ -2,7 +2,7 @@ import React from "react";
 
 const Display = ({ gameOver, text }) => {
   return (
-    <div>
+    <div className="Display">
       <h1>{text}</h1>
     </div>
   );
