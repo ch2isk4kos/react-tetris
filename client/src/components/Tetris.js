@@ -1,15 +1,18 @@
 import React from "react";
 
+// helpers
+import { createStage } from "../gameHelpers.js";
+
 // components
 import Display from "./Display";
 import Stage from "./Stage";
 import StartButton from "./StartButton";
 
-const Tetris = ({}) => {
+const Tetris = () => {
   return (
     <div className="Tetris">
       <h1>Tetris</h1>
-      <Stage />
+      <Stage stage={createStage()} />
       <aside>
         <div>
           <Display text="Score" />
