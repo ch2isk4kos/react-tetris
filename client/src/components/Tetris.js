@@ -15,10 +15,15 @@ import { useStage } from "../hooks/useStage";
 import Display from "./Display";
 import Stage from "./Stage";
 import StartButton from "./StartButton";
+
 const Tetris = () => {
-  // REMOVE CONSOLE.LOG
-  const cs = createStage;
-  console.log(cs());
+  const [dropTime, setDropTime] = useState(null);
+  const [isGameOver, setIsGameOver] = useState(false);
+
+  const player = usePlayer();
+  const stage = useStage();
+
+  console.log("re-render");
   return (
     <StyledTetrisWrapper>
       <StyledTetris>
