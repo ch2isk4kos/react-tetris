@@ -1,21 +1,5 @@
 import styled from "styled-components";
 
-// export const StyledStartButton = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border-radius: 20px;
-//   color: #999;
-//   background: #000;
-
-//   top: 200px;
-//   left: calc((100vw / 2) - 75px);
-//   width: 150px;
-//   height: 100px;
-
-//   border: 4px solid #333;
-//   font-family: Pixel, Arial, Helvetica, sans-serif;
-// `;
 export const StyledStartButton = styled.div`
   box-sizing: border-box;
   display: flex;
