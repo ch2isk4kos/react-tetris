@@ -8,6 +8,8 @@ import { StyledTetris } from "./styles/StyledTetris";
 import { createStage } from "../gameHelpers";
 
 // hooks
+import { usePlayer } from "../hooks/usePlayer";
+import { useStage } from "../hooks/useStage";
 
 // components
 import Display from "./Display";
