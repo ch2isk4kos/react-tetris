@@ -27,8 +27,7 @@ const Tetris = () => {
   return (
     <StyledTetrisWrapper>
       <StyledTetris>
-        <Stage stage={createStage()} />
-        {/* <Stage stage={stage} /> */}
+        <Stage stage={stage} />
         <aside>
           <div>
             <Display text="Score" />
