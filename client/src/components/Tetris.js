@@ -32,15 +32,13 @@ const Tetris = () => {
           {isGameOver ? (
             <Display gameOver={isGameOver} text={"Game Over"} />
           ) : (
-            <>
-              <div>
-                <Display text="Score" />
-                <Display text="Rows" />
-                <Display text="Level" />
-              </div>
-              <StartButton />
-            </>
+            <div>
+              <Display text="Score" />
+              <Display text="Rows" />
+              <Display text="Level" />
+            </div>
           )}
+          <StartButton />
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
