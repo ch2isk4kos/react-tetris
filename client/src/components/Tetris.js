@@ -14,13 +14,13 @@ import Display from "./Display";
 import Stage from "./Stage";
 import StartButton from "./StartButton";
 const Tetris = () => {
+  // REMOVE CONSOLE.LOG
   const cs = createStage;
   console.log(cs());
   return (
     <StyledTetrisWrapper>
       <StyledTetris>
         <Stage stage={createStage()} />
-        {/* <Stage stage={cs()} /> */}
         {/* <Stage stage={stage} /> */}
         <aside>
           <div>
