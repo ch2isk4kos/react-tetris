@@ -26,7 +26,9 @@ const Tetris = () => {
   console.log("re-render");
 
   const startGame = () => {
-    //
+    // reset
+    setStage(createStage());
+    resetPlayer();
   };
 
   const move = (e) => {
@@ -40,10 +42,12 @@ const Tetris = () => {
 
   const movePlayer = (direction) => {
     //
+    updatePlayerPosition({ x: direction, y: 0 });
   };
 
   const drop = () => {
     //
+    updatePlayerPosition({ x: 0, y: 1, isCollided: false });
   };
 
   const dropPlayer = () => {
@@ -65,7 +69,7 @@ const Tetris = () => {
               <Display text="Level" />
             </div>
           )}
-          <StartButton />
+          <StartButton onClick={startGame} />
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
