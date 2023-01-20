@@ -4,10 +4,23 @@ import { TETROMINOS, randomTetromino } from "../tetrominos";
 
 export const usePlayer = () => {
   const [player, setPlayer] = useState({
-    pos: { x: 0, y: 0 },
+    position: { x: 0, y: 0 },
     tetromino: randomTetromino().shape,
     isCollided: false,
   });
 
-  return [player];
+  const updatePlayerPosition = ({ x, y, isCollided }) => {
+    //
+    setPlayer((prev) => ({
+      ...prev,
+      position: { x: (prev.position.x += x), y: (prev.position.y += y) },
+      isCollided,
+    }));
+  };
+
+  const resetPlayer = () => {
+    //
+  };
+
+  return [player, updatePlayerPosition, resetPlayer];
 };
