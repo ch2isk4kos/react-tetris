@@ -24,8 +24,35 @@ const Tetris = () => {
   const [stage, setStage] = useStage(player);
 
   console.log("re-render");
+
+  const startGame = () => {
+    //
+  };
+
+  const move = (e) => {
+    //
+    if (!isGameOver) {
+      if (e.keyCode === "37") move(-1); // left
+      if (e.keyCode === "39") move(1); // right
+      if (e.keyCode === "40") dropPlayer();
+    }
+  };
+
+  const movePlayer = (direction) => {
+    //
+  };
+
+  const drop = () => {
+    //
+  };
+
+  const dropPlayer = () => {
+    //
+    drop();
+  };
+
   return (
-    <StyledTetrisWrapper>
+    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={(e) => move(e)}>
       <StyledTetris>
         <Stage stage={stage} />
         <aside>
