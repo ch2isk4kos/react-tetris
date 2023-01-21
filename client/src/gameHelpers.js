@@ -17,7 +17,9 @@ export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
           // 2. check if move is out of bounds in height (y)
           !stage[y + player.position.y + moveY] ||
           // 3. check if move is out of bounds in width (x)
-          !stage[x + player.position.x + moveX] ||
+          !stage[y + player.position.y + moveY][
+            x + player.position.x + moveX
+          ] ||
           // 4. check that cell isn't set to "clear"
           stage[y + player.position.y + moveY][
             x + player.position.x + moveX
