@@ -49,6 +49,14 @@ const Tetris = () => {
     if (!checkCollision(player, stage, { x: 0, y: 1 })) {
       updatePlayerPosition({ x: 0, y: 1, isCollided: false });
     }
+
+    if (player.position.y < 1) {
+      console.log("Game Over!");
+      setIsGameOver(true);
+      setDropTime(null);
+    }
+
+    updatePlayerPosition({ x: 0, y: 0, isCollided: true });
   };
 
   const dropPlayer = () => {
