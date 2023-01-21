@@ -32,7 +32,6 @@ const Tetris = () => {
   };
 
   const move = ({ keyCode }) => {
-    //
     if (!isGameOver) {
       if (keyCode === 37) movePlayer(-1); // left
       if (keyCode === 39) movePlayer(1); // right
@@ -41,7 +40,7 @@ const Tetris = () => {
   };
 
   const movePlayer = (direction) => {
-    if (!checkCollision(player, stage, { X: direction, y: 0 })) {
+    if (!checkCollision(player, stage, { x: direction, y: 0 })) {
       updatePlayerPosition({ x: direction, y: 0 });
     }
   };
