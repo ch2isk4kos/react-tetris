@@ -31,12 +31,12 @@ const Tetris = () => {
     resetPlayer();
   };
 
-  const move = (e) => {
+  const move = ({ keyCode }) => {
     //
     if (!isGameOver) {
-      if (e.keyCode === "37") move(-1); // left
-      if (e.keyCode === "39") move(1); // right
-      if (e.keyCode === "40") dropPlayer();
+      if (keyCode === 37) movePlayer(-1); // left
+      if (keyCode === 39) movePlayer(1); // right
+      if (keyCode === 40) dropPlayer();
     }
   };
 
