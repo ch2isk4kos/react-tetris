@@ -22,7 +22,6 @@ export const useStage = (player, resetPlayer) => {
           }
         });
       });
-
       // check for collision
       if (player.isCollided) resetPlayer();
 
@@ -30,7 +29,13 @@ export const useStage = (player, resetPlayer) => {
     };
 
     setStage((prev) => updateStage(prev));
-  }, [player, resetPlayer]);
+  }, [
+    player.isCollided,
+    player.position.x,
+    player.position.y,
+    player.tetromino,
+    resetPlayer,
+  ]);
 
   return [stage, setStage, rowsCleared];
 };
