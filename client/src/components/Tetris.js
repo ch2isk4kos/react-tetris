@@ -29,6 +29,7 @@ const Tetris = () => {
     // reset
     setStage(createStage());
     resetPlayer();
+    setIsGameOver(false);
   };
 
   const move = ({ keyCode }) => {
