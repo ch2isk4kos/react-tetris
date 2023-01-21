@@ -5,7 +5,7 @@ import { StyledTetrisWrapper } from "./styles/StyledTetrisWrapper";
 import { StyledTetris } from "./styles/StyledTetris";
 
 // helpers
-import { createStage } from "../gameHelpers";
+import { createStage, checkCollision } from "../gameHelpers";
 
 // hooks
 import { usePlayer } from "../hooks/usePlayer";
@@ -41,8 +41,9 @@ const Tetris = () => {
   };
 
   const movePlayer = (direction) => {
-    //
-    updatePlayerPosition({ x: direction, y: 0 });
+    if (!checkCollision(player, stage, { X: direction, y: 0 })) {
+      updatePlayerPosition({ x: direction, y: 0 });
+    }
   };
 
   const drop = () => {
