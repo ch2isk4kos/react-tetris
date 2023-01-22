@@ -21,7 +21,27 @@ export const usePlayer = () => {
   };
 
   const playerRotate = (stage, direction) => {
-    //
+    // make a deep copy of current player
+    const clone = JSON.parse(JSON.stringify(player));
+    // mutate deep copy (NOT STATE) to rotate
+    clone.tetromino = rotate(clone.tetromino, direction);
+
+    const xPosition = clone.position.x;
+    let offset = 1;
+
+    while (checkCollision(clone, stage, { x: 0, y: 0 })) {
+      clone.position.x += offset;
+      offset = -(offset + (offset > 0 ? 1 : -1)); // creates back/forth movement
+
+      if (offset > clone.tetromino[0].length) {
+        rotate(clone.tetromino, -direction);
+        clone.position.x = xPosition;
+        return;
+      }
+    }
+
+    // update player state
+    setPlayer(clone);
   };
 
   const updatePlayerPosition = ({ x, y, isCollided }) => {
@@ -40,5 +60,5 @@ export const usePlayer = () => {
     });
   }, []);
 
-  return [player, updatePlayerPosition, resetPlayer];
+  return [player, updatePlayerPosition, resetPlayer, playerRotate];
 };
