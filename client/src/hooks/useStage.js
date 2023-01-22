@@ -17,7 +17,7 @@ export const useStage = (player, resetPlayer) => {
         }
         accumulator.push(row);
         return accumulator;
-      });
+      }, []);
     };
 
     const updateStage = (prevStage) => {
