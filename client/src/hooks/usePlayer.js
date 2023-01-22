@@ -3,11 +3,20 @@ import { STAGE_WIDTH, checkCollision } from "../gameHelpers";
 import { TETROMINOS, randomTetromino } from "../tetrominos";
 
 export const usePlayer = () => {
+  // state
   const [player, setPlayer] = useState({
     position: { x: 0, y: 0 },
     tetromino: TETROMINOS[0].shape,
     isCollided: false,
   });
+
+  const rotate = (tetromino, direction) => {
+    //
+  };
+
+  const playerRotate = (stage, direction) => {
+    //
+  };
 
   const updatePlayerPosition = ({ x, y, isCollided }) => {
     setPlayer((prev) => ({
