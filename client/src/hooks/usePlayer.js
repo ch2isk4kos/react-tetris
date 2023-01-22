@@ -11,7 +11,13 @@ export const usePlayer = () => {
   });
 
   const rotate = (tetromino, direction) => {
-    //
+    // transpose the rows into columns
+    const tetro = tetromino.map((_, index) =>
+      tetromino.map((col) => col[index])
+    );
+    // reverse each row to rotate matrix/tetromino
+    if (direction > 0) return tetro.map((row) => row.reverse());
+    return tetro.reverse();
   };
 
   const playerRotate = (stage, direction) => {
