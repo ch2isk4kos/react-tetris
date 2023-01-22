@@ -6,6 +6,8 @@ export const useStage = (player, resetPlayer) => {
   const [rowsCleared, setRowsCleared] = useState(0);
 
   useEffect(() => {
+    setRowsCleared(0);
+
     const updateStage = (prevStage) => {
       // clear stage from previous render
       const newStage = prevStage.map((row) =>
