@@ -23,6 +23,7 @@ export const usePlayer = () => {
   const playerRotate = (stage, direction) => {
     // make a deep copy of current player
     const clone = JSON.parse(JSON.stringify(player));
+
     // mutate deep copy (NOT STATE) to rotate
     clone.tetromino = rotate(clone.tetromino, direction);
 
