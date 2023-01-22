@@ -14,7 +14,7 @@ export const useStage = (player, resetPlayer) => {
       // draw the tetromino
       player.tetromino.forEach((row, y) => {
         row.forEach((value, x) => {
-          if (value !== 0) {
+          if (value !== 0 || value === "undefined") {
             newStage[y + player.position.y][x + player.position.x] = [
               value,
               `${player.isCollided ? "merged" : "clear"}`,
