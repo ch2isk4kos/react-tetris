@@ -8,6 +8,18 @@ export const useStage = (player, resetPlayer) => {
   useEffect(() => {
     setRowsCleared(0);
 
+    const sweep = (newStage) => {
+      newStage.reduce((accumulator, row) => {
+        if (row.findIndex((cell) => cell[0] === 0) === -1) {
+          setRowsCleared((prev) => prev + 1);
+          accumulator.unshift(new Array(newStage[0].length).fill([0, "clear"]));
+          return accumulator;
+        }
+        accumulator.push(row);
+        return accumulator;
+      });
+    };
+
     const updateStage = (prevStage) => {
       // clear stage from previous render
       const newStage = prevStage.map((row) =>
