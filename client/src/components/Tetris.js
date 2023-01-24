@@ -26,7 +26,6 @@ const Tetris = () => {
   console.log("re-render");
 
   const startGame = () => {
-    // reset
     setStage(createStage());
     resetPlayer();
     setIsGameOver(false);
