@@ -31,21 +31,6 @@ const Tetris = () => {
     setIsGameOver(false);
   };
 
-  const move = ({ keyCode }) => {
-    if (!isGameOver) {
-      if (keyCode === 37) movePlayer(-1); // left
-      if (keyCode === 39) movePlayer(1); // right
-      if (keyCode === 40) dropPlayer();
-      if (keyCode === 38) playerRotate(stage, 1);
-    }
-  };
-
-  const movePlayer = (direction) => {
-    if (!checkCollision(player, stage, { x: direction, y: 0 })) {
-      updatePlayerPosition({ x: direction, y: 0 });
-    }
-  };
-
   const drop = () => {
     if (!checkCollision(player, stage, { x: 0, y: 1 })) {
       updatePlayerPosition({ x: 0, y: 1, isCollided: false });
@@ -62,6 +47,21 @@ const Tetris = () => {
   const dropPlayer = () => {
     setDropTime(null);
     drop();
+  };
+
+  const movePlayer = (direction) => {
+    if (!checkCollision(player, stage, { x: direction, y: 0 })) {
+      updatePlayerPosition({ x: direction, y: 0 });
+    }
+  };
+
+  const move = ({ keyCode }) => {
+    if (!isGameOver) {
+      if (keyCode === 37) movePlayer(-1); // left
+      if (keyCode === 39) movePlayer(1); // right
+      if (keyCode === 40) dropPlayer();
+      if (keyCode === 38) playerRotate(stage, 1);
+    }
   };
 
   return (
