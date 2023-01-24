@@ -17,9 +17,11 @@ import Stage from "./Stage";
 import StartButton from "./StartButton";
 
 const Tetris = () => {
+  // Game State
   const [dropTime, setDropTime] = useState(null);
   const [isGameOver, setIsGameOver] = useState(false);
 
+  // Custom Hook(s) Data
   const [player, updatePlayerPosition, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage] = useStage(player, resetPlayer);
 
